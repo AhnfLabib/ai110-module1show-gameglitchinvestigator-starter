@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+*.egg
+dist/
+build/
 
 # Virtual environments
 .venv/
@@ -12,6 +16,11 @@ ENV/
 *.egg-info/
 .eggs/
 pip-wheel-metadata/
+
+# Linters, type checkers, notebooks
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 
 # Environment and config
 .env

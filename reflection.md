@@ -20,6 +20,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+  1. I used Cursor Auto
+  2. Cursor Auto suggested storing the secret in st.session_state.secret so it wouldn’t reset on each Streamlit rerun. I verified by running the app, opening the Developer Debug Info, submitting a guess, and confirming the secret number stayed the same.
+  3. Most suggestions were correct once I described the bug clearly. One suggestion was incomplete: it fixed the hint message text but not the condition that decided when to show it, so I had to adjust the condition myself after testing in the app.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -29,6 +33,9 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+  1. I decided a bug was fixed by (1) running the app and checking the behavior (e.g. hints vs. secret in the debug panel, or Enter key submit), and (2) running pytest so the tests that encode the correct behavior passed.
+  2. I ran pytest tests/test_game_logic.py. For example, test_check_guess_numeric_comparison_with_int_secret calls check_guess(9, 100) and expects outcome 'Too Low'. When it passed, it showed that the hint logic correctly treats 9 as lower than 100, so the backwards-hint bug was fixed.
+  3. Yes. I asked the AI how to run the tests or what a failing test was checking; it explained that test_check_guess_string_secret_... was ensuring the secret is compared as a number even when passed as a string, which helped me fix the comparison.
 ---
 
 ## 4. What did you learn about Streamlit and state?
