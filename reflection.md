@@ -8,6 +8,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+  1. I noticed that when you submit with "Enter", it doesn't really work as a submission button.
+  2. After you submit any number, it keeps on hinting you to go lower even if the number is higher than your guessed number.
+  3. When you choose the difficulty level, regardless of the numerical range, it will choose one number outside that range.
+
 ---
 
 ## 2. How did you use AI as a teammate?
